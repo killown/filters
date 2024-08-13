@@ -263,7 +263,7 @@ class wf_filters : public wf::scene::view_2d_transformer_t
         program.free_resources();
         OpenGL::render_end();
         fade.reset();
-        if (output)
+        if (output && output->render)
         {
             output->render->rem_effect(&pre_hook);
         }
