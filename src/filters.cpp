@@ -124,7 +124,7 @@ class wf_filters : public wf::scene::view_2d_transformer_t
             const wf::render_target_t& target, wf::region_t& damage)
         {
             // We want to render ourselves only, the node does not have children
-            instructions.push_back(render_instruction_t{
+            instructions.emplace_back(render_instruction_t{
                             .instance = this,
                             .target   = target,
                             .damage   = damage & self->get_bounding_box(),
